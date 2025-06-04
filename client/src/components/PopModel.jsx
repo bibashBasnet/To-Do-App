@@ -8,6 +8,7 @@ const PopModal = ({
   setDescription,
   showModal,
   setShowModal,
+  fetchToDo,
 }) => {
   //handle close
   const handleClose = () => {
@@ -28,9 +29,10 @@ const PopModal = ({
       console.log(todo);
       setTitle("");
       setDescription("");
+      fetchToDo();
     } catch (error) {
       console.log(error);
-      toast.error(error);
+      toast.error(error.message);
     }
   };
   return (
